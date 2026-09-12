@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#7d246f">
+<meta name="description" content="University of Benin Demonstration Secondary School — Knowledge for Service.">
+<title>UDSS | University of Benin Demonstration Secondary School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#d94f9d;--pink-light:#f7c4e3;--purple:#6b2b73;--purple-dark:#35123d;--purple-deep:#210b29;--lavender:#efe0f5;--white:#fff;--cream:#fffafd;--text:#2b1930;--muted:#756578;--glass:rgba(255,255,255,.72);--shadow:0 25px 70px rgba(64,20,72,.15);--serif:'Playfair Display',serif;--sans:'DM Sans',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--sans);background:var(--cream);color:var(--text);overflow-x:hidden}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{font-family:inherit}
+::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:#f8edf9}::-webkit-scrollbar-thumb{background:linear-gradient(var(--pink),var(--purple));border-radius:20px}
+#loader{position:fixed;inset:0;z-index:9999;background:radial-gradient(circle at 50% 45%,rgba(217,79,157,.25),transparent 25%),linear-gradient(135deg,#210b29,#4a174f,#6b2b73);display:flex;align-items:center;justify-content:center;transition:opacity .8s ease,visibility .8s ease}.loader-content{text-align:center;color:white}.loader-mark{width:75px;height:75px;margin:auto;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.35);background:linear-gradient(135deg,rgba(217,79,157,.5),rgba(255,255,255,.08));backdrop-filter:blur(15px);animation:loaderPulse 1.6s infinite}.loader-mark span{font-family:var(--serif);font-size:24px;font-weight:700}.loader-content p{margin-top:18px;font-size:12px;letter-spacing:3px;text-transform:uppercase;opacity:.7}@keyframes loaderPulse{0%,100%{transform:scale(.95);box-shadow:0 0 0 rgba(217,79,157,0)}50%{transform:scale(1.05);box-shadow:0 0 50px rgba(217,79,157,.35)}}#loader.hide{opacity:0;visibility:hidden}
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:18px 5%;transition:.4s ease}.navbar.scrolled{padding:10px 5%}.nav-inner{max-width:1250px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.14);backdrop-filter:blur(18px);border-radius:100px;box-shadow:0 10px 40px rgba(50,10,50,.08)}.navbar.scrolled .nav-inner{background:rgba(255,255,255,.9);border-color:rgba(107,43,115,.1)}.brand{display:flex;align-items:center;gap:10px}.brand-logo{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--pink),var(--purple));color:white;font-family:var(--serif);font-weight:700;box-shadow:0 7px 20px rgba(107,43,115,.25)}.brand-text{line-height:1.1}.brand-text strong{display:block;font-family:var(--serif);font-size:14px}.brand-text small{font-size:8px;letter-spacing:1.2px;text-transform:uppercase;opacity:.7}.nav-links{display:flex;align-items:center;gap:26px}.nav-links a{font-size:12px;font-weight:600;position:relative}.nav-links a::after{content:"";position:absolute;bottom:-7px;left:0;width:0;height:2px;background:var(--pink);transition:.3s}.nav-links a:hover::after{width:100%}.nav-cta{padding:11px 18px;border-radius:100px;color:white!important;background:linear-gradient(135deg,var(--pink),var(--purple));box-shadow:0 8px 25px rgba(107,43,115,.25)}.nav-cta::after{display:none}.menu-btn{display:none;border:none;background:none;width:40px;height:40px;cursor:pointer}.menu-btn span{display:block;width:23px;height:2px;margin:5px auto;background:var(--purple);transition:.3s}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;color:white;background:linear-gradient(115deg,rgba(32,8,39,.97),rgba(87,28,91,.84))}.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 25%,rgba(217,79,157,.42),transparent 25%),radial-gradient(circle at 15% 80%,rgba(135,67,177,.3),transparent 30%);pointer-events:none}.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,black,transparent)}.hero-orb{position:absolute;width:300px;height:300px;border-radius:50%;filter:blur(80px);background:rgba(217,79,157,.25);animation:floatOrb 9s ease-in-out infinite}.orb-one{top:15%;right:-100px}.orb-two{bottom:-100px;left:-80px;background:rgba(117,62,177,.25);animation-delay:-4s}@keyframes floatOrb{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,30px)}}
+.hero-container{width:min(1200px,90%);margin:auto;padding-top:100px;position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:100px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);backdrop-filter:blur(10px);font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:25px}.eyebrow i{width:7px;height:7px;border-radius:50%;background:#ff8dcc;box-shadow:0 0 15px #ff8dcc}.hero h1{font-family:var(--serif);font-size:clamp(42px,6vw,78px);line-height:.98;letter-spacing:-2px;max-width:780px}.hero h1 span{color:#f49bca;font-style:italic}.hero-description{max-width:590px;margin:25px 0 30px;color:rgba(255,255,255,.72);line-height:1.8;font-size:15px}.hero-buttons{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:100px;font-size:12px;font-weight:700;transition:.35s;cursor:pointer}.btn-primary{color:white;background:linear-gradient(135deg,#ed73b4,#8e4199);box-shadow:0 15px 35px rgba(217,79,157,.2)}.btn-primary:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(217,79,157,.35)}.btn-outline{color:white;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06)}.btn-outline:hover{background:rgba(255,255,255,.12);transform:translateY(-4px)}
+.hero-visual{position:relative;height:520px}.hero-card{position:absolute;border:1px solid rgba(255,255,255,.2);background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.04));backdrop-filter:blur(18px);border-radius:32px;box-shadow:0 30px 70px rgba(0,0,0,.25);overflow:hidden}.main-visual{width:85%;height:390px;top:50px;right:0;transform:rotate(3deg);transition:transform .2s ease}.visual-placeholder{width:100%;height:100%;display:flex;align-items:flex-end;padding:30px;background:linear-gradient(180deg,rgba(217,79,157,.05),rgba(33,11,41,.9)),radial-gradient(circle at 50% 20%,#d86cac,#632a70 45%,#230b2c 80%)}.visual-content h3{font-family:var(--serif);font-size:34px}.visual-content p{font-size:11px;margin-top:7px;color:rgba(255,255,255,.65)}.floating-card{padding:20px;width:180px;animation:cardFloat 5s ease-in-out infinite}.floating-card.top{top:0;left:0}.floating-card.bottom{bottom:20px;left:30px;animation-delay:-2.5s}.floating-icon{width:43px;height:43px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;background:linear-gradient(135deg,#f27db9,#8c429a);font-size:20px}.floating-card strong{display:block;font-family:var(--serif);font-size:17px}.floating-card small{display:block;color:rgba(255,255,255,.6);margin-top:5px;line-height:1.5;font-size:10px}@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+.ticker{background:var(--purple-dark);color:white;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}.ticker-track{display:inline-flex;align-items:center;gap:35px;padding:15px 0;animation:ticker 25s linear infinite}.ticker span{font-family:var(--serif);font-size:14px}.ticker b{color:#f28bc1}@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+section{padding:110px 5%;position:relative}.container{max-width:1180px;margin:auto}.section-label{color:var(--pink);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:3px;margin-bottom:14px}.section-title{font-family:var(--serif);font-size:clamp(35px,5vw,58px);line-height:1.05;letter-spacing:-1px;color:var(--purple-dark)}.section-title span{color:var(--pink);font-style:italic}.section-intro{color:var(--muted);max-width:600px;line-height:1.8;margin-top:18px;font-size:14px}
+.intro{background:radial-gradient(circle at 90% 10%,#f7e3f5,transparent 30%)}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.stat{padding:30px;border-radius:25px;background:white;box-shadow:var(--shadow);border:1px solid rgba(107,43,115,.06);transition:.4s}.stat:hover{transform:translateY(-7px)}.stat-number{font-family:var(--serif);font-size:38px;background:linear-gradient(135deg,var(--pink),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}.stat p{font-size:11px;color:var(--muted);margin-top:5px}
+.about{background:#fff}.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}.about-visual{min-height:500px;border-radius:35px;position:relative;overflow:hidden;background:linear-gradient(145deg,#e888bc,#7b367e 50%,#29102f);box-shadow:var(--shadow)}.about-visual::before{content:"UDSS";position:absolute;top:40px;right:-20px;font-family:var(--serif);font-size:130px;font-weight:800;color:rgba(255,255,255,.06)}.about-visual-content{position:absolute;inset:0;padding:40px;display:flex;flex-direction:column;justify-content:flex-end;color:white}.about-visual-content .year{font-size:70px;font-family:var(--serif);line-height:1;color:#f7b7da}.about-visual-content p{max-width:270px;margin-top:10px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.7)}.about-copy p{color:var(--muted);line-height:1.9;font-size:14px;margin:22px 0}.quote{margin-top:30px;padding:25px;border-left:3px solid var(--pink);background:linear-gradient(90deg,#fff2fa,transparent);font-family:var(--serif);font-size:20px;color:var(--purple-dark)}
+.pillars{background:linear-gradient(135deg,#f9edf9,#fff)}.pillar-grid{margin-top:50px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.pillar{padding:30px 25px;border-radius:25px;background:rgba(255,255,255,.8);border:1px solid rgba(107,43,115,.08);transition:.45s;position:relative;overflow:hidden}.pillar::before{content:"";position:absolute;width:100px;height:100px;border-radius:50%;background:var(--pink-light);opacity:.25;right:-45px;top:-45px}.pillar:hover{transform:translateY(-10px);box-shadow:0 25px 60px rgba(70,20,80,.12)}.pillar-icon{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:#f8e3f1;color:var(--purple);font-size:22px;margin-bottom:22px}.pillar h3{font-family:var(--serif);font-size:22px}.pillar p{margin-top:12px;font-size:12px;color:var(--muted);line-height:1.7}
+.divisions{background:var(--purple-deep);color:white}.divisions .section-title{color:white}.divisions .section-intro{color:rgba(255,255,255,.6)}.division-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px;margin-top:50px}.division{min-height:330px;padding:35px;border-radius:32px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.03));transition:.4s}.division:hover{transform:translateY(-8px);border-color:rgba(242,139,193,.4)}.division-number{position:absolute;right:25px;top:15px;font-size:100px;font-family:var(--serif);color:rgba(255,255,255,.04)}.division small{color:#f28bc1;text-transform:uppercase;letter-spacing:2px;font-size:9px}.division h3{font-family:var(--serif);font-size:35px;margin:20px 0 15px}.division p{max-width:420px;color:rgba(255,255,255,.65);line-height:1.8;font-size:13px}
+.academic{background:white}.academic-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.subject-list{margin-top:35px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.subject{padding:17px;border-radius:16px;background:#fbf2fa;font-size:12px;font-weight:600;color:var(--purple);transition:.3s}.subject:hover{background:#f4dced;transform:translateX(5px)}.academic-panel{padding:45px;border-radius:35px;background:linear-gradient(145deg,#8e438e,#401848);color:white;box-shadow:var(--shadow);position:relative;overflow:hidden}.academic-panel::after{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:rgba(240,130,190,.12);right:-80px;top:-80px}.academic-panel h3{font-family:var(--serif);font-size:34px;position:relative;z-index:1}.academic-panel p{margin-top:15px;color:rgba(255,255,255,.68);font-size:13px;line-height:1.8;position:relative;z-index:1}.academic-feature{display:flex;gap:15px;margin-top:30px;position:relative;z-index:1}.check{width:34px;height:34px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.1);color:#ff9aca}.academic-feature strong{display:block;font-size:12px}.academic-feature span{display:block;margin-top:5px;font-size:10px;color:rgba(255,255,255,.55);line-height:1.5}
+.facilities{background:#fcf6fc}.facility-grid{margin-top:50px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.facility{min-height:250px;padding:30px;border-radius:28px;background:white;position:relative;overflow:hidden;border:1px solid rgba(107,43,115,.07);box-shadow:0 12px 40px rgba(70,20,80,.06);transition:.4s}.facility:hover{transform:translateY(-8px)}.facility::before{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#f3b7d9,#d9b6e8);opacity:.25;right:-50px;top:-50px}.facility-icon{font-size:27px;margin-bottom:35px}.facility h3{font-family:var(--serif);font-size:22px}.facility p{color:var(--muted);font-size:11px;line-height:1.7;margin-top:10px}
+.student-life{background:white}.life-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}.life-card{min-height:340px;border-radius:30px;overflow:hidden;position:relative;background:linear-gradient(145deg,#d96cae,#60276b);color:white;padding:30px;display:flex;align-items:flex-end;transition:.4s}.life-card:nth-child(2){background:linear-gradient(145deg,#8c50a3,#311039)}.life-card:nth-child(3){background:linear-gradient(145deg,#ef9fc7,#703476)}.life-card:hover{transform:translateY(-8px)}.life-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 20%,rgba(255,255,255,.25),transparent 35%)}.life-content{position:relative;z-index:1}.life-content small{font-size:9px;text-transform:uppercase;letter-spacing:2px;opacity:.7}.life-content h3{font-family:var(--serif);font-size:28px;margin-top:8px}.life-content p{font-size:11px;line-height:1.6;opacity:.72;margin-top:8px}
+.alumni{background:linear-gradient(135deg,#f8e7f4,#eee1f5)}.alumni-box{display:grid;grid-template-columns:1fr .8fr;gap:50px;align-items:center;padding:60px;border-radius:40px;background:white;box-shadow:var(--shadow)}.alumni-box p{color:var(--muted);line-height:1.8;font-size:13px;margin-top:18px}.alumni-stat{display:flex;align-items:center;gap:20px;padding:20px;border-radius:20px;background:#fcf3fa}.alumni-stat strong{font-family:var(--serif);font-size:30px;color:var(--purple)}.alumni-stat span{color:var(--muted);font-size:11px}
+.news{background:#fff}.news-grid{margin-top:50px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.news-card{padding:30px;border-radius:25px;background:#fcf7fc;border:1px solid #f0e2ef;transition:.4s}.news-card:hover{transform:translateY(-7px);box-shadow:0 20px 50px rgba(70,20,80,.09)}.news-date{font-size:9px;letter-spacing:2px;color:var(--pink);text-transform:uppercase}.news-card h3{font-family:var(--serif);font-size:22px;margin:15px 0 10px}.news-card p{font-size:11px;line-height:1.7;color:var(--muted)}
+.cta{padding-top:50px}.cta-box{max-width:1180px;margin:auto;padding:75px 8%;border-radius:40px;text-align:center;color:white;position:relative;overflow:hidden;background:radial-gradient(circle at 20% 20%,rgba(240,130,190,.4),transparent 25%),radial-gradient(circle at 80% 80%,rgba(130,80,180,.4),transparent 30%),linear-gradient(135deg,#321039,#6e2a73);box-shadow:0 30px 80px rgba(70,20,80,.2)}.cta-box h2{font-family:var(--serif);font-size:clamp(35px,5vw,55px);max-width:700px;margin:auto}.cta-box p{max-width:600px;margin:20px auto 30px;color:rgba(255,255,255,.65);line-height:1.7;font-size:13px}
+.contact{background:#fff}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}.contact-details{margin-top:35px;display:grid;gap:18px}.contact-item{display:flex;gap:15px;align-items:flex-start}.contact-icon{width:42px;height:42px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#f9e8f4;color:var(--purple)}.contact-item strong{display:block;font-size:11px;margin-bottom:5px}.contact-item span{display:block;color:var(--muted);font-size:11px;line-height:1.6}.contact-card{padding:35px;border-radius:30px;background:#fcf5fb;border:1px solid #f0dfed}.contact-card h3{font-family:var(--serif);font-size:30px}.contact-card p{color:var(--muted);font-size:12px;line-height:1.7;margin:10px 0 25px}.contact-form{display:grid;gap:12px}.contact-form input,.contact-form textarea{width:100%;border:1px solid #ead9e8;background:white;border-radius:14px;padding:15px;font-family:var(--sans);outline:none;font-size:12px;color:var(--text);transition:.3s}.contact-form textarea{min-height:120px;resize:vertical}.contact-form input:focus,.contact-form textarea:focus{border-color:var(--pink);box-shadow:0 0 0 4px rgba(217,79,157,.08)}.contact-form button{border:none}
+footer{padding:60px 5% 25px;color:white;background:#210b29}.footer-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:50px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1)}.footer-brand p{max-width:330px;color:rgba(255,255,255,.55);line-height:1.8;font-size:11px;margin-top:18px}.footer-column h4{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#f09aca;margin-bottom:18px}.footer-column a{display:block;color:rgba(255,255,255,.6);font-size:11px;margin-bottom:12px;transition:.3s}.footer-column a:hover{color:white;transform:translateX(4px)}.footer-bottom{max-width:1180px;margin:25px auto 0;display:flex;justify-content:space-between;gap:20px;color:rgba(255,255,255,.35);font-size:9px}
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.nav-links{position:fixed;top:82px;left:5%;right:5%;display:flex;flex-direction:column;padding:25px;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-radius:25px;box-shadow:0 25px 60px rgba(50,10,50,.15);transform:translateY(-20px) scale(.98);opacity:0;pointer-events:none;transition:.35s}.nav-links.active{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}.nav-links a{width:100%;padding:10px;color:var(--purple-dark);text-align:center}.nav-cta{width:100%}.menu-btn{display:block}.hero-container{grid-template-columns:1fr;padding-top:130px}.hero{min-height:auto;padding-bottom:70px}.hero-visual{height:400px;margin-top:10px}.main-visual{height:320px;width:85%}.floating-card{width:155px;padding:16px}.floating-card.bottom{left:5px;bottom:0}.intro-grid,.about-grid,.academic-layout,.contact-grid,.alumni-box{grid-template-columns:1fr}.pillar-grid{grid-template-columns:1fr 1fr}.facility-grid,.life-grid,.news-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){section{padding:80px 5%}.brand-text{display:none}.hero h1{font-size:46px;letter-spacing:-1.5px}.hero-description{font-size:13px}.hero-buttons{flex-direction:column;align-items:stretch}.btn{width:100%}.hero-visual{height:350px}.main-visual{height:290px;right:0}.floating-card{width:145px}.floating-card.bottom{left:5px;bottom:0}.intro-grid{gap:40px}.stats{grid-template-columns:1fr 1fr}.stat{padding:22px 18px}.stat-number{font-size:30px}.about-visual{min-height:370px}.about-visual-content .year{font-size:55px}.pillar-grid,.division-grid,.facility-grid,.life-grid,.news-grid{grid-template-columns:1fr}.division{min-height:270px}.academic-panel{padding:30px}.subject-list{grid-template-columns:1fr 1fr}.alumni-box{padding:30px 22px}.footer-grid{grid-template-columns:1fr;gap:35px}.footer-bottom{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+/* =========================
+   UDSS V2 — CINEMATIC LAYER
+   ========================= */
+:root{
+  --v2-pink:#ff5fa2;
+  --v2-pink-soft:#ffd6e8;
+  --v2-purple:#7b42f6;
+  --v2-purple-deep:#2b125f;
+  --v2-ink:#1c1230;
+  --v2-white:#fffaff;
+  --v2-ease:cubic-bezier(.22,1,.36,1);
+}
+html{scroll-behavior:auto}
+body{overflow-x:hidden;background:#fffaff}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:9990;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,20%),rgba(255,95,162,.10),transparent 25%);
+  mix-blend-mode:multiply;
+}
+.v2-cursor-glow{
+  position:fixed;width:240px;height:240px;border-radius:50%;pointer-events:none;
+  z-index:9991;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(255,95,162,.16),rgba(123,66,246,.08) 35%,transparent 70%);
+  filter:blur(8px);opacity:0;transition:opacity .35s ease;
+}
+.v2-grain{
+  position:fixed;inset:-50%;z-index:9989;pointer-events:none;opacity:.055;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  animation:v2grain .25s steps(2) infinite;
+}
+@keyframes v2grain{0%{transform:translate(0,0)}25%{transform:translate(2%,-1%)}50%{transform:translate(-1%,2%)}75%{transform:translate(1%,1%)}100%{transform:translate(-2%,-2%)}}
+.v2-loader-curtain{
+  position:fixed;inset:0;z-index:10000;display:grid;place-items:center;
+  background:linear-gradient(135deg,#fff8fc,#f5edff 48%,#2b125f);
+  pointer-events:none;
+}
+.v2-loader-word{
+  font-family:"Playfair Display",serif;font-size:clamp(2.5rem,9vw,7rem);
+  color:#fff;text-align:center;opacity:0;transform:translateY(35px);
+}
+.v2-loader-word span{display:block;font-family:"DM Sans",sans-serif;font-size:.16em;letter-spacing:.35em;text-transform:uppercase;color:#ffd6e8;margin-top:12px}
+.hero{isolation:isolate;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(120deg,rgba(255,255,255,.95),rgba(255,236,247,.76) 42%,rgba(229,214,255,.76));
+}
+.hero::after{
+  content:"";position:absolute;width:70vw;height:70vw;max-width:760px;max-height:760px;
+  right:-18%;top:2%;z-index:-1;border-radius:50%;
+  background:radial-gradient(circle,rgba(123,66,246,.23),rgba(255,95,162,.10) 38%,transparent 70%);
+  filter:blur(18px);animation:v2float 8s ease-in-out infinite alternate;
+}
+@keyframes v2float{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-4%,5%,0) scale(1.06)}}
+.v2-hero-kicker{opacity:0;transform:translateY(20px)}
+.v2-hero-title .v2-word{display:inline-block;overflow:hidden;vertical-align:bottom}
+.v2-hero-title .v2-word>span{display:inline-block;transform:translateY(110%)}
+.v2-hero-sub{opacity:0;transform:translateY(20px)}
+.v2-hero-actions{opacity:0;transform:translateY(18px)}
+.v2-reveal{opacity:0;transform:translateY(55px);will-change:transform,opacity}
+.v2-line{
+  height:1px;width:100%;background:linear-gradient(90deg,transparent,rgba(123,66,246,.35),rgba(255,95,162,.35),transparent);
+  transform:scaleX(0);transform-origin:left;
+}
+.v2-section-title{overflow:hidden}
+.v2-section-title .v2-title-inner{display:block;transform:translateY(105%)}
+.v2-split{overflow:hidden}
+.v2-split>*{will-change:transform}
+.v2-card{
+  transform:translateZ(0);transition:transform .55s var(--v2-ease),box-shadow .55s var(--v2-ease);
+}
+.v2-card:hover{transform:translateY(-8px) rotateX(2deg) rotateY(-2deg);box-shadow:0 25px 70px rgba(55,25,100,.16)}
+.v2-mag-btn{position:relative;will-change:transform}
+.v2-mag-btn::after{
+  content:"";position:absolute;inset:-7px;border-radius:inherit;border:1px solid rgba(255,95,162,.22);
+  transform:scale(.88);opacity:0;transition:.35s var(--v2-ease);
+}
+.v2-mag-btn:hover::after{transform:scale(1);opacity:1}
+.v2-spotlight{position:relative;overflow:hidden}
+.v2-spotlight::before{
+  content:"";position:absolute;inset:-40%;pointer-events:none;
+  background:radial-gradient(circle at var(--sx,50%) var(--sy,50%),rgba(255,255,255,.34),transparent 20%);
+  transition:background-position .08s linear;
+}
+.v2-depth{transform-style:preserve-3d;perspective:1000px}
+.v2-depth .v2-depth-inner{transform:translateZ(0);transition:transform .2s ease-out}
+.v2-pinned-copy{max-width:680px}
+.v2-number{font-variant-numeric:tabular-nums}
+.v2-marquee{overflow:hidden;white-space:nowrap}
+.v2-marquee-track{display:inline-flex;gap:2rem;will-change:transform}
+.v2-marquee-track span{display:inline-block}
+.v2-progress{
+  position:fixed;left:0;top:0;height:3px;width:0;z-index:10001;
+  background:linear-gradient(90deg,var(--v2-pink),var(--v2-purple));
+  box-shadow:0 0 16px rgba(123,66,246,.35);
+}
+.v2-scroll-indicator{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.72;
+}
+.v2-scroll-indicator i{width:1px;height:38px;background:linear-gradient(var(--v2-pink),transparent);animation:v2scroll 1.5s ease-in-out infinite}
+@keyframes v2scroll{0%,100%{transform:scaleY(.45);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+@media(max-width:700px){
+  .v2-cursor-glow,.v2-grain{display:none}
+  .hero::after{width:110vw;height:110vw;right:-45%;top:8%}
+  .v2-card:hover{transform:translateY(-3px)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}
+  .v2-reveal,.v2-hero-kicker,.v2-hero-sub,.v2-hero-actions{opacity:1!important;transform:none!important}
+}
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js"></script>
+
+</head>
+<body>
+
+<div class="v2-progress"></div>
+<div class="v2-cursor-glow"></div>
+<div class="v2-grain"></div>
+<div class="v2-loader-curtain" aria-hidden="true">
+  <div class="v2-loader-word">UDSS<span>University of Benin Demonstration Secondary School</span></div>
+</div>
+
+<div id="loader"><div class="loader-content"><div class="loader-mark"><span>UDSS</span></div><p>Knowledge for Service</p></div></div>
+
+<header class="navbar" id="navbar">
+<div class="nav-inner">
+<a href="#home" class="brand"><div class="brand-logo">U</div><div class="brand-text"><strong>UDSS</strong><small>University of Benin Demonstration Secondary School</small></div></a>
+<nav class="nav-links" id="navLinks">
+<a href="#home">Home</a><a href="#about">About</a><a href="#academics">Academics</a><a href="#facilities">Campus</a><a href="#news">News</a><a href="#contact" class="nav-cta">Contact</a>
+</nav>
+<button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-grid"></div><div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+<div class="hero-container">
+<div class="hero-copy reveal">
+<div class="eyebrow"><i></i>A Legacy of Excellence Since 1981</div>
+<h1>Knowledge. <span>Character.</span> Excellence.</h1>
+<p class="hero-description">Welcome to the University of Benin Demonstration Secondary School — a place where education extends beyond the classroom to shape confident minds, strong character and purposeful futures.</p>
+<div class="hero-buttons"><a href="#about" class="btn btn-primary">Discover UDSS</a><a href="#contact" class="btn btn-outline">Explore Admissions</a></div>
+</div>
+<div class="hero-visual reveal">
+<div class="hero-card main-visual" id="parallaxCard"><div class="visual-placeholder"><div class="visual-content"><h3>Great UDSS.</h3><p>The school for excellence.</p></div></div></div>
+<div class="hero-card floating-card top"><div class="floating-icon">✦</div><strong>Academic Growth</strong><small>A broad curriculum designed to encourage critical thinking.</small></div>
+<div class="hero-card floating-card bottom"><div class="floating-icon">◆</div><strong>1981 → Today</strong><small>More than four decades of educational heritage.</small></div>
+</div>
+</div>
+</section>
+
+<div class="ticker"><div class="ticker-track"><span>GREAT <b>UDSS</b></span><span>✦</span><span>KNOWLEDGE FOR SERVICE</span><span>✦</span><span>THE SCHOOL FOR EXCELLENCE</span><span>✦</span><span>CHARACTER • KNOWLEDGE • SERVICE</span><span>✦</span><span>GREAT <b>UDSS</b></span><span>✦</span><span>KNOWLEDGE FOR SERVICE</span><span>✦</span><span>THE SCHOOL FOR EXCELLENCE</span></div></div>
+
+<section class="intro"><div class="container"><div class="intro-grid"><div class="reveal"><div class="section-label">Our Story</div><h2 class="section-title">Building minds for a <span>purposeful future.</span></h2><p class="section-intro">Since its establishment in 1981, UDSS has developed an identity centred around learning, character formation and service.</p></div><div class="stats reveal"><div class="stat"><div class="stat-number">1981</div><p>Year established</p></div><div class="stat"><div class="stat-number">40+</div><p>Years of educational heritage</p></div><div class="stat"><div class="stat-number">2</div><p>Junior & Senior school divisions</p></div><div class="stat"><div class="stat-number">01</div><p>Community built around excellence</p></div></div></div></div></section>
+
+<section class="about" id="about"><div class="container"><div class="about-grid"><div class="about-visual reveal"><div class="about-visual-content"><div class="year">1981</div><h3>A legacy worth continuing.</h3><p>University of Benin Demonstration Secondary School, Ugbowo Campus, Benin City.</p></div></div><div class="about-copy reveal"><div class="section-label">About UDSS</div><h2 class="section-title">More than a school. <span>A foundation.</span></h2><p>The University of Benin Demonstration Secondary School was founded on 5 October 1981 and is situated at the University of Benin's Ugbowo Campus in Benin City.</p><p>The school combines academic development with character formation, providing an environment where students can broaden their knowledge, develop critical thinking and participate in curricular and co-curricular activities.</p><div class="quote">“Knowledge for Service.”</div></div></div></div></section>
+
+<section class="pillars"><div class="container"><div class="section-label reveal">What Makes UDSS Different</div><h2 class="section-title reveal">The principles behind <span>the experience.</span></h2><p class="section-intro reveal">Education at UDSS is presented as more than examination preparation — it is an opportunity to develop intellectual ability, character and a sense of responsibility.</p><div class="pillar-grid">
+<div class="pillar reveal"><div class="pillar-icon">✦</div><h3>Knowledge</h3><p>A broad curriculum designed to expand perspectives and encourage critical thinking.</p></div>
+<div class="pillar reveal"><div class="pillar-icon">◇</div><h3>Character</h3><p>Education that places responsible behaviour, discipline and integrity alongside academics.</p></div>
+<div class="pillar reveal"><div class="pillar-icon">◎</div><h3>Excellence</h3><p>A culture that encourages students to pursue strong performance and meaningful achievement.</p></div>
+<div class="pillar reveal"><div class="pillar-icon">↗</div><h3>Service</h3><p>Preparing young people to contribute positively to their communities and society.</p></div>
+</div></div></section>
+
+<section class="divisions"><div class="container"><div class="section-label reveal">School Structure</div><h2 class="section-title reveal">Growing with every <span>stage.</span></h2><p class="section-intro reveal">UDSS serves students through Junior and Senior School sections, providing an educational journey designed to support development across different stages of secondary education.</p><div class="division-grid">
+<div class="division reveal"><div class="division-number">01</div><small>Foundation</small><h3>Junior School</h3><p>A stage focused on strengthening academic foundations, confidence, discipline, curiosity and essential learning habits.</p></div>
+<div class="division reveal"><div class="division-number">02</div><small>Preparation</small><h3>Senior School</h3><p>A more advanced academic environment preparing students for external examinations, higher education and the responsibilities ahead.</p></div>
+</div></div></section>
+
+<section class="academic" id="academics"><div class="container"><div class="academic-layout"><div class="reveal"><div class="section-label">Academic Life</div><h2 class="section-title">A curriculum that <span>opens minds.</span></h2><p class="section-intro">The school's existing information highlights its broad curriculum and its emphasis on developing students' perspectives and critical thinking.</p><div class="subject-list"><div class="subject">Mathematics</div><div class="subject">English Language</div><div class="subject">Sciences</div><div class="subject">Social Sciences</div><div class="subject">Humanities</div><div class="subject">Technology & ICT</div><div class="subject">Creative Studies</div><div class="subject">Physical Education</div></div></div>
+<div class="academic-panel reveal"><h3>Education beyond the textbook.</h3><p>The UDSS environment supports both curricular and co-curricular development, with access to the wider University of Benin environment and sports facilities highlighted among the school's strengths.</p>
+<div class="academic-feature"><div class="check">✓</div><div><strong>Critical Thinking</strong><span>Encouraging students to ask questions, analyse ideas and form informed opinions.</span></div></div>
+<div class="academic-feature"><div class="check">✓</div><div><strong>Co-Curricular Growth</strong><span>Learning continues through activities, sports, teamwork and school life.</span></div></div>
+<div class="academic-feature"><div class="check">✓</div><div><strong>Future Preparation</strong><span>Helping students build the discipline and knowledge required for the next stage.</span></div></div>
+</div></div></div></section>
+
+<section class="facilities" id="facilities"><div class="container"><div class="section-label reveal">Campus Experience</div><h2 class="section-title reveal">Space to learn, <span>play & grow.</span></h2><p class="section-intro reveal">Located within the Ugbowo Campus of the University of Benin, UDSS benefits from a broad educational environment for both academic and co-curricular activities.</p><div class="facility-grid">
+<div class="facility reveal"><div class="facility-icon">📚</div><h3>Learning Environment</h3><p>Spaces designed around classroom learning, academic development and student interaction.</p></div>
+<div class="facility reveal"><div class="facility-icon">💻</div><h3>ICT & Technology</h3><p>A forward-looking approach to technology and digital learning within the school environment.</p></div>
+<div class="facility reveal"><div class="facility-icon">🏃</div><h3>Sports & Recreation</h3><p>Students can participate in sporting and co-curricular activities within the wider university environment.</p></div>
+<div class="facility reveal"><div class="facility-icon">🧪</div><h3>Practical Learning</h3><p>Encouraging students to connect classroom knowledge with practical experiences.</p></div>
+<div class="facility reveal"><div class="facility-icon">🎨</div><h3>Creative Expression</h3><p>A school experience where students can develop interests beyond conventional academics.</p></div>
+<div class="facility reveal"><div class="facility-icon">🤝</div><h3>Community</h3><p>Strong connections between students, parents, staff and alumni contribute to the school's wider community.</p></div>
+</div></div></section>
+
+<section class="student-life"><div class="container"><div class="section-label reveal">Student Life</div><h2 class="section-title reveal">Discover. Participate. <span>Become.</span></h2><p class="section-intro reveal">School life extends beyond lessons. Activities, sports, collaboration and community experiences help students discover interests and develop confidence.</p><div class="life-grid">
+<div class="life-card reveal"><div class="life-content"><small>01 / Community</small><h3>United Together</h3><p>Building friendships, teamwork and a sense of belonging.</p></div></div>
+<div class="life-card reveal"><div class="life-content"><small>02 / Sports</small><h3>Active Minds</h3><p>Developing discipline, teamwork and healthy competition.</p></div></div>
+<div class="life-card reveal"><div class="life-content"><small>03 / Creativity</small><h3>Beyond Books</h3><p>Creating opportunities for students to explore interests and talents.</p></div></div>
+</div></div></section>
+
+<section class="alumni"><div class="container"><div class="alumni-box reveal"><div><div class="section-label">UDOSA</div><h2 class="section-title">A school community that <span>continues.</span></h2><p>The University of Benin Demonstration Secondary School Old Students Association connects former students and supports the broader UDSS community. Its activities include education support, mentorship, welfare and impact projects.</p><a href="#contact" class="btn btn-primary" style="margin-top:25px;">Connect With UDSS</a></div><div><div class="alumni-stat"><strong>UDOSA</strong><span>A continuing network of former students.</span></div><div class="alumni-stat" style="margin-top:12px;"><strong>01</strong><span>Shared connection: the UDSS experience.</span></div></div></div></div></section>
+
+<section class="news" id="news"><div class="container"><div class="section-label reveal">School Updates</div><h2 class="section-title reveal">Life at UDSS, <span>in motion.</span></h2><p class="section-intro reveal">A modern school website should make it easy for students and parents to discover announcements, school activities and important updates.</p><div class="news-grid">
+<article class="news-card reveal"><div class="news-date">School Life</div><h3>Welcome to a new academic journey</h3><p>Follow school announcements and important information throughout the academic session.</p></article>
+<article class="news-card reveal"><div class="news-date">Community</div><h3>Parents, students & school</h3><p>The PTA forms an important part of the wider school community and supports collaboration between parents and the institution.</p></article>
+<article class="news-card reveal"><div class="news-date">Legacy</div><h3>Celebrating the UDSS story</h3><p>From its establishment in 1981 to the students and alumni who continue its story, UDSS carries a distinctive educational heritage.</p></article>
+</div></div></section>
+
+<section class="cta"><div class="cta-box reveal"><h2>The next chapter starts with education.</h2><p>Discover a learning environment built around knowledge, character, service and excellence.</p><a href="#contact" class="btn btn-primary">Begin Your Journey</a></div></section>
+
+<section class="contact" id="contact"><div class="container"><div class="contact-grid"><div class="reveal"><div class="section-label">Get In Touch</div><h2 class="section-title">Let's talk about <span>UDSS.</span></h2><p class="section-intro">For school enquiries, prospective parents and other official matters, use the school's published contact information.</p><div class="contact-details">
+<div class="contact-item"><div class="contact-icon">📍</div><div><strong>Campus</strong><span>University of Benin Demonstration Secondary School, Ugbowo Campus, Benin City, Edo State, Nigeria.</span></div></div>
+<div class="contact-item"><div class="contact-icon">☎</div><div><strong>Senior School</strong><span>08029442149</span></div></div>
+<div class="contact-item"><div class="contact-icon">☎</div><div><strong>Junior School</strong><span>08055966815</span></div></div>
+<div class="contact-item"><div class="contact-icon">✉</div><div><strong>Email</strong><span>hello@udsseduportal.com</span></div></div>
+</div></div>
+<div class="contact-card reveal"><h3>Send an enquiry.</h3><p>This form is a visual front-end demonstration. Connect it to your preferred form service or backend before using it for real submissions.</p><form class="contact-form" id="contactForm"><input type="text" placeholder="Your name" required><input type="email" placeholder="Email address" required><input type="tel" placeholder="Phone number"><textarea placeholder="How can we help?" required></textarea><button type="submit" class="btn btn-primary">Send Enquiry →</button></form></div>
+</div></div></section>
+
+<footer><div class="footer-grid"><div class="footer-brand"><div class="brand"><div class="brand-logo">U</div><div class="brand-text"><strong style="color:white;">UDSS</strong><small style="color:rgba(255,255,255,.5);">University of Benin Demonstration Secondary School</small></div></div><p>Knowledge for Service. A legacy of education, character, community and excellence in Benin City.</p></div><div class="footer-column"><h4>Explore</h4><a href="#home">Home</a><a href="#about">About</a><a href="#academics">Academics</a><a href="#facilities">Campus</a></div><div class="footer-column"><h4>Connect</h4><a href="#news">News</a><a href="#contact">Contact</a><a href="tel:08029442149">Senior School</a><a href="tel:08055966815">Junior School</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> UDSS. V2 Cinematic Concept Redesign.</span><span>Knowledge • Character • Service</span></div></footer>
+
+<script>
+window.addEventListener("load",()=>setTimeout(()=>document.getElementById("loader").classList.add("hide"),700));
+const navbar=document.getElementById("navbar");
+window.addEventListener("scroll",()=>navbar.classList.toggle("scrolled",window.scrollY>40));
+const menuBtn=document.getElementById("menuBtn"),navLinks=document.getElementById("navLinks");
+menuBtn.addEventListener("click",()=>navLinks.classList.toggle("active"));
+document.querySelectorAll(".nav-links a").forEach(link=>link.addEventListener("click",()=>navLinks.classList.remove("active")));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+const heroCard=document.getElementById("parallaxCard");
+document.querySelector(".hero").addEventListener("mousemove",e=>{if(innerWidth<800)return;const r=e.currentTarget.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;heroCard.style.transform=`rotateX(${(r.height/2-y)/80}deg) rotateY(${(x-r.width/2)/80}deg) rotateZ(3deg)`});
+document.querySelector(".hero").addEventListener("mouseleave",()=>heroCard.style.transform="rotateZ(3deg)");
+document.getElementById("contactForm").addEventListener("submit",e=>{e.preventDefault();alert("Thank you. This demonstration form is ready to be connected to an email or form service.")});
+document.getElementById("year").textContent=new Date().getFullYear();
+if(innerWidth>900){const glow=document.createElement("div");glow.style.cssText="position:fixed;width:180px;height:180px;border-radius:50%;pointer-events:none;z-index:9998;background:radial-gradient(circle,rgba(217,79,157,.08),transparent 70%);transform:translate(-50%,-50%);transition:left .15s ease,top .15s ease";document.body.appendChild(glow);document.addEventListener("mousemove",e=>{glow.style.left=e.clientX+"px";glow.style.top=e.clientY+"px"})}
+</script>
+
+<script>
+(() => {
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Smooth scrolling (Lenis)
+  if (!reduce && window.Lenis) {
+    const lenis = new Lenis({duration: 1.15, smoothWheel: true, syncTouch: true});
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  if (!window.gsap || !window.ScrollTrigger || reduce) {
+    const curtain = document.querySelector(".v2-loader-curtain");
+    if (curtain) curtain.style.display = "none";
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Loader: premium curtain reveal
+  const curtain = document.querySelector(".v2-loader-curtain");
+  const word = document.querySelector(".v2-loader-word");
+  const tl = gsap.timeline({defaults:{ease:"power4.out"}});
+  tl.to(word,{opacity:1,y:0,duration:.7})
+    .to(word,{opacity:0,y:-25,duration:.45,delay:.35})
+    .to(curtain,{clipPath:"inset(0 0 100% 0)",duration:1.15,ease:"power4.inOut"})
+    .set(curtain,{display:"none"});
+
+  // Hero typography split without requiring SplitText
+  const heroTitle = document.querySelector(".hero h1");
+  if (heroTitle) {
+    const text = heroTitle.textContent.trim();
+    heroTitle.classList.add("v2-hero-title");
+    heroTitle.innerHTML = text.split(/(\s+)/).map(part =>
+      /\s+/.test(part) ? part : `<span class="v2-word"><span>${part}</span></span>`
+    ).join("");
+    tl.to(".v2-hero-title .v2-word>span",{y:"0%",duration:.8,stagger:.055},"-=.45");
+  }
+  tl.to(".v2-hero-kicker",{opacity:1,y:0,duration:.65},"-=.55")
+    .to(".v2-hero-sub",{opacity:1,y:0,duration:.65},"-=.4")
+    .to(".v2-hero-actions",{opacity:1,y:0,duration:.6},"-=.35");
+
+  // Add cinematic classes to likely cards
+  document.querySelectorAll(".card,.pillar,.division-card,.news-card,.contact-card,.stat-card").forEach(el => {
+    el.classList.add("v2-card","v2-spotlight","v2-reveal");
+  });
+
+  // Generic reveal animation
+  gsap.utils.toArray(".v2-reveal").forEach((el,i) => {
+    gsap.to(el,{
+      opacity:1,y:0,duration:.9,ease:"power3.out",
+      scrollTrigger:{trigger:el,start:"top 86%",once:true}
+    });
+  });
+
+  // Section headings rise like a film title
+  document.querySelectorAll("h2,h3").forEach((el)=>{
+    if (el.closest(".nav") || el.classList.contains("hero-title")) return;
+    const wrap = document.createElement("span");
+    wrap.className="v2-title-inner";
+    wrap.innerHTML=el.innerHTML;
+    el.classList.add("v2-section-title");
+    el.innerHTML="";
+    el.appendChild(wrap);
+    gsap.to(wrap,{y:"0%",duration:.9,ease:"power4.out",scrollTrigger:{trigger:el,start:"top 88%",once:true}});
+  });
+
+  // Cinematic line reveals
+  document.querySelectorAll("section").forEach(section=>{
+    const line=document.createElement("div");
+    line.className="v2-line";
+    section.prepend(line);
+    gsap.to(line,{scaleX:1,duration:1.2,ease:"power3.inOut",scrollTrigger:{trigger:section,start:"top 82%",once:true}});
+  });
+
+  // Magnetic buttons / links
+  document.querySelectorAll("a.btn,button,.cta-button").forEach(btn=>{
+    btn.classList.add("v2-mag-btn");
+    btn.addEventListener("mousemove",e=>{
+      const r=btn.getBoundingClientRect();
+      const x=e.clientX-r.left-r.width/2;
+      const y=e.clientY-r.top-r.height/2;
+      gsap.to(btn,{x:x*.16,y:y*.16,duration:.25,ease:"power3.out",overwrite:true});
+    });
+    btn.addEventListener("mouseleave",()=>gsap.to(btn,{x:0,y:0,duration:.5,ease:"elastic.out(1,.5)"}));
+  });
+
+  // Cursor light
+  const glow=document.querySelector(".v2-cursor-glow");
+  if (glow) {
+    window.addEventListener("mousemove",e=>{
+      glow.style.opacity="1";
+      gsap.to(glow,{x:e.clientX,y:e.clientY,duration:.35,ease:"power3.out"});
+      document.body.style.setProperty("--mx",`${e.clientX/window.innerWidth*100}%`);
+      document.body.style.setProperty("--my",`${e.clientY/window.innerHeight*100}%`);
+    },{passive:true});
+  }
+
+  // Spotlight cards
+  document.querySelectorAll(".v2-spotlight").forEach(card=>{
+    card.addEventListener("pointermove",e=>{
+      const r=card.getBoundingClientRect();
+      card.style.setProperty("--sx",`${((e.clientX-r.left)/r.width)*100}%`);
+      card.style.setProperty("--sy",`${((e.clientY-r.top)/r.height)*100}%`);
+    });
+  });
+
+  // 3D depth on major visual blocks
+  document.querySelectorAll(".hero .visual,.hero .hero-card,.feature-image,.about-image").forEach(el=>{
+    el.classList.add("v2-depth");
+    el.addEventListener("pointermove",e=>{
+      const r=el.getBoundingClientRect();
+      const rx=((e.clientY-r.top)/r.height-.5)*-5;
+      const ry=((e.clientX-r.left)/r.width-.5)*7;
+      gsap.to(el,{rotationX:rx,rotationY:ry,duration:.35,ease:"power2.out",transformPerspective:900});
+    });
+    el.addEventListener("pointerleave",()=>gsap.to(el,{rotationX:0,rotationY:0,duration:.7,ease:"power3.out"}));
+  });
+
+  // Parallax layers
+  document.querySelectorAll(".hero .orb,.hero .blob,.hero .floating").forEach((el,i)=>{
+    gsap.to(el,{y:(i%2?60:-45),x:(i%2?35:-25),ease:"none",
+      scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:1.2}});
+  });
+
+  // Scroll progress
+  const progress=document.querySelector(".v2-progress");
+  ScrollTrigger.create({
+    start:0,end:"max",
+    onUpdate:self=>{if(progress) progress.style.width=(self.progress*100)+"%";}
+  });
+
+  // Gentle horizontal marquee if ticker exists
+  const ticker=document.querySelector(".ticker,.marquee");
+  if(ticker){
+    ticker.classList.add("v2-marquee");
+    const track=ticker.querySelector(".ticker-track,.marquee-track");
+    if(track){
+      track.classList.add("v2-marquee-track");
+      gsap.to(track,{xPercent:-35,duration:24,ease:"none",repeat:-1});
+    }
+  }
+
+  // Number count-up for obvious stat numbers
+  document.querySelectorAll(".stat-number,.stat-value,.number").forEach(el=>{
+    const raw=el.textContent.trim();
+    const match=raw.match(/(\d+)/);
+    if(!match) return;
+    const target=Number(match[1]);
+    const suffix=raw.replace(match[1],"");
+    const obj={v:0};
+    gsap.to(obj,{v:target,duration:1.4,ease:"power2.out",
+      scrollTrigger:{trigger:el,start:"top 88%",once:true},
+      onUpdate:()=>el.textContent=Math.round(obj.v)+suffix
+    });
+  });
+
+  // Add scroll indicator to hero
+  const hero=document.querySelector(".hero");
+  if(hero && !hero.querySelector(".v2-scroll-indicator")){
+    const ind=document.createElement("div");
+    ind.className="v2-scroll-indicator";
+    ind.innerHTML="<small>SCROLL TO EXPLORE</small><i></i>";
+    hero.appendChild(ind);
+  }
+
+  // Refresh after fonts/layout settle
+  window.addEventListener("load",()=>ScrollTrigger.refresh());
+})();
+</script>
+
+</body>
+</html>
